@@ -1,0 +1,189 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 12px;
+	--color-text: #131313;
+	--color-bg: #fff;
+	--color-link: #131313;
+	--color-link-hover: #131313;
+	--page-padding-y: 2.5rem;
+	--page-padding-x: 4rem;
+}
+
+body {
+	margin: 0;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: radial-gradient(ellipse at top, #eee9dd, #eee9dd);
+	background-size: 100% 100vh;
+	background-attachment: fixed;
+}
+
+em {
+	font-family: "ivyora-display", serif;
+	font-weight: 400;
+	line-height: 1;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+	cursor: pointer;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid red;
+	background: transparent;
+}
+
+.frame {
+	position: relative;
+	margin-top: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	width: max-content;
+	font-size: 13px;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.frame #cdawrap,
+.frame__inner {
+	max-width: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+	border-radius: 2vw;
+}
+
+.frame__inner {
+	grid-area: frame-inner;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	max-width: 100%;
+	align-items: center;
+}
+
+.frame__title {
+  font-size: inherit;
+  margin: 0;
+}
+
+.frame__tags {
+  display: contents;
+}
+
+.logo {
+	position: fixed;
+	top: var(--page-padding-y);
+	left: var(--page-padding-x);
+	font-size: 30px;
+	text-transform: lowercase;
+	font-weight: 200;
+	line-height: 1.1;
+	padding-bottom: 1rem;
+	font-kerning: none; /* Important to avoid jump when changing char structure */
+}
+
+.logo__pre {
+	font-weight: bold;
+	font-size: 32px;
+	font-family: "ivyora-display", serif;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: var(--page-padding-y) var(--page-padding-x) 0;
+	font-size: clamp(1.5rem,6vw,2.25rem);
+	letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.content--img {
+	background-size: cover;
+	background-position: 50% 50%;
+	min-height: 80vh;
+	width: 100%;
+	margin: 30vh 0;
+}
+
+.content--intro {
+	min-height: 100vh;
+	margin: 0;
+	padding-bottom: var(--page-padding-y);
+}
+
+.content p {
+	max-width: 1260px;
+	padding: 1rem 0;
+	margin: 0;
+}
+
+.content h2 {
+	font-size: clamp(3rem,8vw,10rem);
+	font-weight: 600;
+	font-family: "ivyora-display", serif;
+	margin: 0;
+	line-height: 0.9;
+}
+
+.space {
+	margin-bottom: 80vh;
+}
+
+.content a {
+	text-decoration: underline;
+}
+
+.content a:hover,
+.content a:focus {
+	text-decoration: none;
+}
+
+.content--outro {
+	padding-bottom: var(--page-padding-y);
+}
+
+@media screen and (min-width: 53em) {
+	:root {
+		font-size: 16px;
+	}
+}
